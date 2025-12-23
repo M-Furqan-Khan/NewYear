@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2026</title>
+    <meta name="description" content="Celebrate New Year 2026 with beautiful wishes and animations">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4755991948514532" crossorigin="anonymous"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0a0a2a 0%, #1a1a40 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Starry Background */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+        }
+        
+        /* Main Container */
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        /* Header */
+        .header {
+            margin-bottom: 30px;
+        }
+        
+        .year-2026 {
+            font-size: 120px;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ffd700, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 64px;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            margin-bottom: 20px;
+        }
+        
+        /* Message Box */
+        .message-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: none;
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+        }
+        
+        .message {
+            font-size: 24px;
+            line-height: 1.6;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+        
+        .personal-greeting {
+            font-size: 32px;
+            color: #4ecdc4;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        
+        /* Share Section */
+        .share-section {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+        
+        .share-title {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .share-btn {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+        }
+        
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(78, 205, 196, 0.5);
+        }
+        
+        .share-btn.whatsapp {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+        
+        .share-btn.whatsapp:hover {
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+        }
+        
+        .share-btn.telegram {
+            background: linear-gradient(45deg, #0088cc, #0077b5);
+            box-shadow: 0 5px 15px rgba(0, 136, 204, 0.3);
+        }
+        
+        .share-btn.telegram:hover {
+            box-shadow: 0 8px 20px rgba(0, 136, 204, 0.5);
+        }
+        
+        .share-btn.facebook {
+            background: linear-gradient(45deg, #1877F2, #0d5cb6);
+            box-shadow: 0 5px 15px rgba(24, 119, 242, 0.3);
+        }
+        
+        .share-btn.facebook:hover {
+            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.5);
+        }
+        
+        /* Share Counter */
+        .counter {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #aaa;
+        }
+        
+        .counter span {
+            color: #ffd700;
+            font-weight: 600;
+        }
+        
+        /* Fireworks Animation */
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 3;
+        }
+        
+        /* Ad Container */
+        .ad-container {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 728px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .ad-placeholder {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .year-2026 {
+                font-size: 80px;
+            }
+            
+            .greeting {
+                font-size: 48px;
+            }
+            
+            .message {
+                font-size: 20px;
+            }
+            
+            .personal-greeting {
+                font-size: 26px;
+            }
+            
+            .message-box {
+                padding: 25px;
+                margin: 20px 15px;
+            }
+            
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .share-btn {
+                width: 220px;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .year-2026 {
+                font-size: 60px;
+            }
+            
+            .greeting {
+                font-size: 36px;
+            }
+            
+            .message {
+                font-size: 18px;
+            }
+            
+            .personal-greeting {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Starry Background -->
+    <div class="stars" id="stars"></div>
+    
+    <!-- Main Content -->
+    <div class="container">
+        <div class="header">
+            <h1 class="year-2026 floating">2026</h1>
+            <h2 class="greeting">Happy New Year!</h2>
+        </div>
+        
+        <div class="message-box">
+            <p class="message">May this New Year bring you happiness, peace, and prosperity. Wishing you a year filled with new hopes, new joys, and new beginnings.</p>
+            <div class="personal-greeting" id="personalGreeting"></div>
+        </div>
+        
+        <!-- Share Section -->
+        <div class="share-section">
+            <h3 class="share-title">Share the joy with others</h3>
+            <div class="share-buttons">
+                <button class="share-btn whatsapp" id="whatsappBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.76.982.998-3.675-.236-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.9 6.994c-.004 5.45-4.438 9.88-9.888 9.88m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.333.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.333 11.893-11.893 0-3.18-1.24-6.162-3.495-8.411"/>
+                    </svg>
+                    WhatsApp
+                </button>
+                <button class="share-btn telegram" id="telegramBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.158l-1.67 7.894c-.235 1.001-.946 1.248-1.72.775l-4.733-3.494-1.832 1.767c-.202.202-.371.371-.76.371l.271-3.844 8.733-7.898c.31-.278-.067-.433-.482-.155L6.792 12.33l-3.232-1.011c-1-.312-1.018-.996.208-1.474l12.637-4.84c.834-.301 1.566.192 1.32 1.163z"/>
+                    </svg>
+                    Telegram
+                </button>
+                <button class="share-btn facebook" id="facebookBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    Facebook
+                </button>
+            </div>
+            <div class="counter">Shared <span id="shareCount">0</span> times</div>
+        </div>
+        
+        <!-- Ad Container -->
+        <div class="ad-container">
+            <div class="ad-placeholder">Advertisement</div>
+            <!-- AdSense Ad will be placed here -->
+        </div>
+    </div>
+    
+    <!-- Fireworks Container -->
+    <div id="fireworks"></div>
+    
+    <script>
+        // Initialize variables
+        let shareCount = localStorage.getItem('newYearShareCount') || 0;
+        document.getElementById('shareCount').textContent = shareCount;
+        
+        // Get name from URL if present
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        
+        if (name) {
+            document.getElementById('personalGreeting').textContent = `Happy New Year 2026, ${name}! 🎉`;
+            document.getElementById('personalGreeting').style.display = 'block';
+        }
+        
+        // Create starry background
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            const starCount = 150;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random position
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Random size
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Random brightness
+                const brightness = Math.random() * 0.7 + 0.3;
+                star.style.opacity = brightness;
+                
+                // Random twinkle animation
+                const duration = Math.random() * 3 + 2;
+                const delay = Math.random() * 2;
+                star.style.animation = `twinkle ${duration}s ease-in-out ${delay}s infinite`;
+                
+                starsContainer.appendChild(star);
+            }
+        }
+        
+        // Create fireworks
+        function createFireworks() {
+            const fireworksContainer = document.getElementById('fireworks');
+            
+            // Create a firework every 2-4 seconds
+            setInterval(() => {
+                createFirework();
+            }, Math.random() * 2000 + 2000);
+            
+            // Create initial fireworks
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    createFirework();
+                }, i * 300);
+            }
+        }
+        
+        function createFirework() {
+            const fireworksContainer = document.getElementById('fireworks');
+            
+            // Random position
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * (window.innerHeight / 2) + 50;
+            
+            // Create firework burst
+            const particles = 30;
+            const colors = ['#ffd700', '#ff6b6b', '#4ecdc4', '#ff8e53'];
+            
+            for (let i = 0; i < particles; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('firework');
+                
+                // Random color
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.backgroundColor = color;
+                
+                // Start position
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+                
+                // Random angle and distance
+                const angle = (i / particles) * Math.PI * 2;
+                const distance = Math.random() * 60 + 40;
+                
+                // Calculate end position
+                const endX = x + Math.cos(angle) * distance;
+                const endY = y + Math.sin(angle) * distance;
+                
+                // Animate
+                const duration = Math.random() * 0.5 + 0.5;
+                
+                particle.animate([
+                    { 
+                        transform: 'translate(0, 0) scale(1)',
+                        opacity: 1
+                    },
+                    { 
+                        transform: `translate(${endX - x}px, ${endY - y}px) scale(0)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: duration * 1000,
+                    easing: 'ease-out'
+                });
+                
+                fireworksContainer.appendChild(particle);
+                
+                // Remove particle after animation
+                setTimeout(() => {
+                    particle.remove();
+                }, duration * 1000);
+            }
+        }
+        
+        // Share functions
+        function shareOnWhatsApp() {
+            const message = `🎉 Happy New Year 2026! 🎉\n\n${name ? `From: ${name}\n\n` : ''}Wishing you a wonderful year ahead!\n\nShare your own wishes: ${window.location.href}`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/?text=${encodedMessage}`, '_blank');
+            
+            updateShareCount();
+        }
+        
+        function shareOnTelegram() {
+            const message = `🎉 Happy New Year 2026! 🎉\n\n${name ? `From: ${name}\n\n` : ''}Wishing you a wonderful year ahead!`;
+            const encodedMessage = encodeURIComponent(message);
+            const encodedUrl = encodeURIComponent(window.location.href);
+            window.open(`https://t.me/share/url?url=${encodedUrl}&text=${encodedMessage}`, '_blank');
+            
+            updateShareCount();
+        }
+        
+        function shareOnFacebook() {
+            const encodedUrl = encodeURIComponent(window.location.href);
+            window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, '_blank');
+            
+            updateShareCount();
+        }
+        
+        function updateShareCount() {
+            shareCount++;
+            document.getElementById('shareCount').textContent = shareCount;
+            localStorage.setItem('newYearShareCount', shareCount);
+        }
+        
+        // Initialize AdSense
+        function initializeAdSense() {
+            // Wait for AdSense to load
+            if (typeof adsbygoogle !== 'undefined') {
+                try {
+                    // Create ad container
+                    const adContainer = document.querySelector('.ad-container');
+                    adContainer.innerHTML = '';
+                    
+                    const adElement = document.createElement('ins');
+                    adElement.className = 'adsbygoogle';
+                    adElement.style.display = 'block';
+                    adElement.setAttribute('data-ad-client', 'ca-pub-4755991948514532');
+                    adElement.setAttribute('data-ad-slot', '1234567890'); // Replace with your actual ad slot
+                    adElement.setAttribute('data-ad-format', 'auto');
+                    adElement.setAttribute('data-full-width-responsive', 'true');
+                    
+                    adContainer.appendChild(adElement);
+                    
+                    // Push the ad
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    
+                    console.log('AdSense ad loaded');
+                } catch (error) {
+                    console.log('AdSense error:', error);
+                }
+            } else {
+                // Try again after a delay
+                setTimeout(initializeAdSense, 1000);
+            }
+        }
+        
+        // Event listeners
+        document.getElementById('whatsappBtn').addEventListener('click', shareOnWhatsApp);
+        document.getElementById('telegramBtn').addEventListener('click', shareOnTelegram);
+        document.getElementById('facebookBtn').addEventListener('click', shareOnFacebook);
+        
+        // Initialize everything when page loads
+        window.addEventListener('DOMContentLoaded', () => {
+            createStars();
+            createFireworks();
+            
+            // Initialize AdSense after a short delay
+            setTimeout(initializeAdSense, 2000);
+            
+            // Add a greeting message if name is provided
+            if (name) {
+                // Create a personalized greeting element with animation
+                const greeting = document.getElementById('personalGreeting');
+                greeting.style.opacity = '0';
+                greeting.style.transform = 'translateY(20px)';
+                
+                setTimeout(() => {
+                    greeting.style.transition = 'opacity 1s ease, transform 1s ease';
+                    greeting.style.opacity = '1';
+                    greeting.style.transform = 'translateY(0)';
+                }, 1000);
+            }
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            // Adjust star positions if needed
+            const stars = document.querySelectorAll('.star');
+            stars.forEach(star => {
+                // Keep stars in bounds if window is resized
+                const left = parseFloat(star.style.left);
+                const top = parseFloat(star.style.top);
+                
+                if (left > 100) star.style.left = '100%';
+                if (top > 100) star.style.top = '100%';
+            });
+        });
+    </script>
+</body>
+</html>
